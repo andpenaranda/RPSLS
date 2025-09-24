@@ -51,7 +51,7 @@ jobs:
       
       - name: Build the Docker image
         run: |
-          docker build -f ./flask-app/Dockerfile \
+          docker build -f ./Dockerfile \
             --build-arg MYSQL_USER=${{ vars.MYSQL_USER }} \
             --build-arg MYSQL_PASSWORD=${{ secrets.MYSQL_PASSWORD }} \
             --build-arg MYSQL_DB=${{ vars.MYSQL_DB }} \
