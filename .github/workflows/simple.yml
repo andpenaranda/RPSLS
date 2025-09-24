@@ -51,8 +51,8 @@ jobs:
       
       - name: Build the Docker image
         run: |
-          docker build -f ./Dockerfile \
-            -t "${{ vars.DOCKER_USERNAME }}/${{ vars.IMAGE_NAME }}:${{ vars.IMAGE_TAG }}" .
+          docker build -f ./Dockerfile -t "${{ vars.DOCKER_USERNAME }}/${{ vars.IMAGE_NAME }}:${{ vars.IMAGE_TAG }}" .
+
     
       - name: Push to Docker Hub
         run: |
