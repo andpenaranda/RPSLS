@@ -47,7 +47,7 @@ jobs:
       - name: Debug Dockerfile presence
         run: |
           echo "Listing files in the flask-app directory:"
-          ls -al ./
+          ls -al ./mi-react-app
       
       - name: Build the Docker image
         run: |
