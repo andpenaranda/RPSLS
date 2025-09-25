@@ -1,0 +1,27 @@
+# Node modules (se reconstruyen en el contenedor)
+node_modules
+npm-debug.log
+
+# Archivos de configuración locales
+.env
+*.local
+
+# Directorios de desarrollo
+tests
+__tests__
+coverage
+.vscode
+.idea
+
+# Archivos temporales
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Git
+.git
+.gitignore
+
+# Archivos de CI/CD
+.github
