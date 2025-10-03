@@ -68,3 +68,4 @@ jobs:
       - name: Stop and remove the container
         run: |
           docker stop test-container
+          docker rm test-container
