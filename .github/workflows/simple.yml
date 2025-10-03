@@ -64,3 +64,7 @@ jobs:
       - name: Test the container with curl
         run: |
           curl http://localhost:8080
+
+      - name: Stop and remove the container
+        run: |
+          docker stop test-container
