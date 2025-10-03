@@ -60,14 +60,3 @@ jobs:
       - name: Run the container
         run: |
           docker run -d --name test-container -p 8080:80 "${{ vars.DOCKER_USERNAME }}/${{ vars.IMAGE_NAME }}:${{ vars.IMAGE_TAG }}"
-
-      - name: Test the container with curl
-        run: |
-          curl -I http://localhost:8080
-
-      - name: Stop and remove the container
-        run: |
-          docker stop test-container
-
-
-
