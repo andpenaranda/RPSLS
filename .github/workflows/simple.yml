@@ -53,7 +53,11 @@ jobs:
         run: |
           docker build -f ./Dockerfile -t "${{ vars.DOCKER_USERNAME }}/${{ vars.IMAGE_NAME }}:${{ vars.IMAGE_TAG }}" .
 
-    
       - name: Push to Docker Hub
         run: |
           docker push "${{ vars.DOCKER_USERNAME }}/${{ vars.IMAGE_NAME }}:${{ vars.IMAGE_TAG }}"
+
+      - name: Run the container
+        run: |
+          docker run -d --name test-container -p 8080:80 "${{ vars.DOCKER_USERNAME }}/${{ vars.IMAGE_NAME }}:${{ vars.IMAGE_TAG }}"
+
