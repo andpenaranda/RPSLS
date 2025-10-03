@@ -59,11 +59,11 @@ jobs:
 
       - name: Run the container
         run: |
-          docker run -d --name test-container -p 8080:80 "${{ vars.DOCKER_USERNAME }}/${{ vars.IMAGE_NAME }}:${{ vars.IMAGE_TAG }}"
+          docker run -d --name test-container -p ${{ vars.HOST_PORT }}:${{ vars.CONTAINER_PORT }} "${{ vars.DOCKER_USERNAME }}/${{ vars.IMAGE_NAME }}:${{ vars.IMAGE_TAG }}"
 
       - name: Test the container with curl
         run: |
-          curl http://localhost:8080
+          curl http://localhost:${{ vars.HOST_PORT }}
 
       - name: Stop and remove the container
         run: |
